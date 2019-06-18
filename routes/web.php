@@ -11,12 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/test', function(){
-    return [
-        'saludo' => 'hola',
-        'nombre' => 'Juan David'
-    ];
-});
+Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'DashboardController@index');
