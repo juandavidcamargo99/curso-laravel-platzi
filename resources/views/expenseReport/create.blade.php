@@ -14,6 +14,7 @@
     <div class="col-md-12">
         <div class="shadow p-4 border rounded-sm">
             <form action="/expense_reports" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" class="form-control" placeholder="add a title">
