@@ -13,6 +13,13 @@ class ExpenseReportTableSeeder extends Seeder
     public function run()
     {
         DB::table('expense_reports')->truncate();
-        $users = factory(ExpenseReport::class, 2)->create();
+        $expense_report = factory(ExpenseReport::class)->create([
+            'id' => 1,
+            'title' => 'Vacaciones de verano'
+        ]);
+        $expense_report = factory(ExpenseReport::class)->create([
+            'id' => 2,
+            'title' => 'Viaje estados unidos'
+        ]);
     }
 }

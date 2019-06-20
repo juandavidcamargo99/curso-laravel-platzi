@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\ExpenseReport;
+use App\Expense;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,5 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(ExpenseReportTableSeeder::class);
+         $this->call(ExpenseTableSeeder::class);
     }
 }

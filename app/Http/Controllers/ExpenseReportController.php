@@ -38,11 +38,9 @@ class ExpenseReportController extends Controller
     {
         $data = $request->validate([
             'title' => ['required','min:2', 'unique:expense_reports'],
-            'valor' => ['required','min:2', 'max:9000','integer']
         ]);
         $report = new ExpenseReport();
         $report->title = $data['title'];
-        $report->valor = $data['valor'];
         $report->save();
 
         return redirect('/expense_reports');
