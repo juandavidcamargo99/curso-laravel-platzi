@@ -17,8 +17,17 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="add a title">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="add a title" value="{{ old('title') }}">
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <button type="submit" class="btn btn-primary">Create new report</button>
             </form>
         </div>
