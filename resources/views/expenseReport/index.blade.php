@@ -16,12 +16,14 @@
             <tr class="bg-info">
                 <td>#</td>
                 <td>Concepto</td>
-            
+                <td>Valor<td>
+                <td></td>
             </tr>
             @foreach ($reports as $report)
             <tr>
-                <td>{{$report->id}}</td>
-                <td>{{$report->title}}</td>
+                <td>{{ $report->id }}</td>
+                <td><a href="/expense_reports/{{ $report->id }}">{{ $report->title }}</a></td>
+                <td>{{ $report->valor }}</td>
                 <td><a href="/expense_reports/{{ $report->id }}/edit">Editar</a></td>
                 <td><a href="/expense_reports/{{ $report->id }}/confirmDelete">Delete</a></td>
             </tr>    

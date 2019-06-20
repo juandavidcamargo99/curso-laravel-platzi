@@ -37,10 +37,12 @@ class ExpenseReportController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => ['required','min:2']
+            'title' => ['required','min:2', 'unique:expense_reports'],
+            'valor' => ['required','min:2', 'max:9000','integer']
         ]);
         $report = new ExpenseReport();
-        $report->title = $data;
+        $report->title = $data['title'];
+        $report->valor = $data['valor'];
         $report->save();
 
         return redirect('/expense_reports');
@@ -49,12 +51,12 @@ class ExpenseReportController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  ExpenseReport  $expenseReport
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ExpenseReport $expenseReport)
     {
-        //
+        return view('expenseReport.show')->with('report',$expenseReport);
     }
 
     /**

@@ -19,6 +19,10 @@
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" class="form-control" placeholder="add a title" value="{{ old('title') }}">
                 </div>
+                <div class="form-group">
+                    <label for="title">Valor</label>
+                    <input type="number" name="valor" id="valor" class="form-control" placeholder="add a value" value="{{ old('valor') }}">
+                </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
