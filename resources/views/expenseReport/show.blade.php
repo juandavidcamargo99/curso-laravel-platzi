@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -8,6 +8,7 @@
 <div class="row">
     <div class="col-md-12">
             <a href="/expense_reports" class="btn btn-secondary">Back</a>
+            <a href="/expense_reports/{{ $report->id }}/confirmSendMail" class="btn btn-info">Send Email</a>
     </div>
 </div>
 <div class="row">
